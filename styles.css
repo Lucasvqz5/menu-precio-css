@@ -1,0 +1,158 @@
+:root{
+    --bgc-page: color-mix(in srgb, #48e 20%, #fff 70%);
+    --main-color: color-mix(in srgb, #48e 100%, #fff 60%);
+    --main-color-dark: color-mix(in srgb, #48e 100%, #333 20%);
+    --letter-color: #333;
+    --card-color: #eee;
+}
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    font-family: sans-serif;
+    color: var(--letter-color);
+    background-color: var(--bgc-page);
+}
+.menu__wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 40px;
+    height: 100dvh;
+    align-items: center;
+    width: clamp(400px, 100%, 850px);
+    margin: auto;
+}
+
+/*------CARD SECTION*/
+.price__section{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    width: 100%;
+}
+.card{
+    width: 200px;
+    height: 250px;
+    background-color: var(--card-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    color: var(--letter-color);
+    border-radius: 10px;
+    box-shadow: 3px 3px 8px 0 #6667;
+    transition: transform .4s;
+}
+.card:hover{
+    transform: scale(1.1);
+}
+
+.card__name{
+    border-radius: 10px 10px 0 0;
+    flex: 1;
+    background-color: var(--main-color);
+    width: 100%;
+    display: grid;
+    place-content: center;
+    color: var(--card-color);
+    font-weight: bold;
+    font-size: 2rem;
+    transition: background-color .5s;
+}
+.card:hover .card__name{
+    background-color: var(--main-color-dark);
+}
+.card__price{
+    flex: 1;
+    display: grid;
+    place-content: center;
+    font-size: 2.5rem;
+    justify-items: center;
+    font-weight: bold;
+    transition: color .5s;
+}
+.card:hover .card__price{
+    color: var(--main-color-dark);
+}
+.card__price::after{
+    content: 'per month';
+    font-size: 1rem;
+    font-weight: normal;
+}
+.card__info{
+    flex: 1;
+    padding: 5px 10px;
+}
+.card__info p {
+    font-size: .8rem;
+    text-align: center;
+}
+
+/*--------BAR SECTION*/
+.bar__section{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    background: var(--card-color);
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px 0 #6667;
+}
+.bar__price{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.bar__date{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    text-transform: capitalize;
+}
+.bar{
+    width: 100%;
+    height: 15px;
+    border-radius: 20px;
+    background-color: #bbb;
+}
+.bar__pad{
+    width: 0;
+    height: 100%;
+    border-radius: 20px;
+    background-color: var(--main-color);
+    transition: width .5s;
+}
+.menu__wrapper:has(.card:first-child:hover) .bar__pad {
+    width: 2.5%;
+    border-radius: 20px 5px 5px 20px;
+}
+.menu__wrapper:has(.card:nth-child(2):hover) .bar__price:first-child .bar__pad {
+    width: 40%;
+    border-radius: 20px;
+}
+.menu__wrapper:has(.card:nth-child(2):hover) .bar__price:nth-child(2) .bar__pad {
+    width: 70%;
+    border-radius: 20px;
+}
+.menu__wrapper:has(.card:nth-child(2):hover) .bar__price:last-child .bar__pad {
+    width: 55%;
+    border-radius: 20px;
+}
+.menu__wrapper:has(.card:last-child:hover) .bar__pad {
+    width: 100%;
+    border-radius: 20px;
+}
+
+
+/*----------ANIMACIONES*/
+/*card-animation*/
+@keyframes agrandar {
+    from{
+    }
+    to{
+    }
+}
